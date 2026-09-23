@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero contact-hero">
+  <div class="page-hero__bg" aria-hidden="true">
+    <div class="page-hero__glow page-hero__glow--blue"></div>
+  </div>
+  <div class="container page-hero__inner">
+    <span class="hero__badge">Начнём</span>
+    <h1 class="page-hero__title">{{ page.title }} / <span class="accent">Свяжитесь с нами</span></h1>
+    <p class="page-hero__sub">{{ page.header.subtitle|default('Оставьте заявку — проведём бесплатный технический аудит и предложим план с понятными бизнес-метриками.') }}</p>
+  </div>
+</section>
+
+<!-- ==================== CONTACT FORM SECTION ==================== -->
+<section class="contact contact--page" id="contact">
+  <div class="container">
+    <div class="contact__card">
+      <div class="contact__head">
+        <span class="section-head__tag">Заявка</span>
+        <h2 class="contact__title">Бесплатный технический аудит</h2>
+        <p class="contact__sub">Заполните форму — мы ответим в течение рабочего дня.</p>
+      </div>
+      <form class="contact__form" id="contactForm" name="contact-form" method="post" action="{{ page.url }}">
+        <div class="contact__row">
+          <div class="contact__field">
+            <label class="contact__label" for="contactMethod">Способ связи</label>
+            <div class="contact__select-wrap">
+              <select name="method" id="contactMethod" class="input contact__select" required>
+                <option value="telegram" selected>Телеграм</option>
+                <option value="max">Мессенджер Max</option>
+                <option value="call">Звонок</option>
+                <option value="email">Почта</option>
+              </select>
+              <svg class="contact__select-caret" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="contact__field">
+            <label class="contact__label" for="contactValue">Контакт</label>
+            <input type="text" name="contact" id="contactValue" class="input" placeholder="Телефон или email" required>
+          </div>
+        </div>
+        <textarea name="message" class="input input--area" rows="4" placeholder="Коротко о вашем проекте / потребности"></textarea>
+
+        <div class="contact__checkboxes">
+          <div class="contact__checkbox-item">
+            <input type="checkbox" name="terms_agree" id="termsAgree" class="contact__checkbox" required>
+            <label for="termsAgree" class="contact__checkbox-label">
+              Я согласен с <a href="{{ base_url }}/terms" target="_blank">Пользовательским соглашением</a>
+            </label>
+          </div>
+          <div class="contact__checkbox-item">
+            <input type="checkbox" name="privacy_agree" id="privacyAgree" class="contact__checkbox" required>
+            <label for="privacyAgree" class="contact__checkbox-label">
+              Я согласен с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--lg contact__submit">Отправить заявку</button>
+        <p class="contact__success" id="formSuccess" hidden>✓ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT INFO SECTION ==================== -->
+<section class="contact-info-section">
+  <div class="container">
+    <div class="contact-info__grid">
+      <div class="contact-info__card">
+        <div class="contact-info__icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6l8 6 8-6M4 6h16v12H4V6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="contact-info__title">E-mail</h3>
+        <a href="mailto:{{ page.header.email|default('hello@ecom-studio.ru') }}" class="contact-info__value">{{ page.header.email|default('hello@ecom-studio.ru') }}</a>
+      </div>
+      <div class="contact-info__card">
+        <div class="contact-info__icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="contact-info__title">Телефон</h3>
+        <a href="tel:{{ page.header.phone|default('+70000000000') }}" class="contact-info__value">{{ page.header.phone|default('+7 (000) 000-00-00') }}</a>
+      </div>
+      <div class="contact-info__card">
+        <div class="contact-info__icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="contact-info__title">Telegram</h3>
+        <a href="https://t.me/{{ page.header.telegram|default('username') }}" target="_blank" class="contact-info__value">{{ page.header.telegram|default('@username') }}</a>
+      </div>
+      <div class="contact-info__card">
+        <div class="contact-info__icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="contact-info__title">Max</h3>
+        <a href="https://max.ru/{{ page.header.max|default('username') }}" target="_blank" class="contact-info__value">{{ page.header.max|default('@username') }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

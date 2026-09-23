@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true">
+    <div class="page-hero__glow"></div>
+  </div>
+  <div class="container page-hero__inner">
+    <span class="hero__badge">Компетенции</span>
+    <h1 class="page-hero__title">{{ page.title }}</h1>
+    <p class="page-hero__sub">{{ page.header.subtitle|default('Пять направлений, закрывающих всю техническую карту вашего интернет-магазина — от кода до серверов и поисковой выдачи.') }}</p>
+  </div>
+</section>
+
+<section class="content-page">
+  <div class="container">
+    <div class="content-page__body">
+      {{ page.content|raw }}
+    </div>
+
+    <!-- Service CTA -->
+    <div class="service-cta">
+      <h3 class="service-cta__title">Хотите обсудить вашу задачу?</h3>
+      <p class="service-cta__text">Оставьте заявку — мы быстро оценим объём работ и предложим решение.</p>
+      <button type="button" class="btn btn--primary btn--lg" data-modal-open="serviceModal">Обсудить проект</button>
+    </div>
+  </div>
+</section>
+
+<!-- Service Modal -->
+<div class="modal" id="serviceModal" aria-hidden="true">
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__content">
+    <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="modal__header">
+      <span class="section-head__tag">Заявка</span>
+      <h2 class="modal__title">Бесплатный технический аудит</h2>
+      <p class="modal__subtitle">Заполните форму — мы ответим в течение рабочего дня.</p>
+    </div>
+    <form class="modal__form" id="serviceForm" name="service-form" method="post" action="{{ base_url }}/contact">
+      <div class="modal__row">
+        <div class="modal__field">
+          <label class="modal__label" for="serviceMethod">Способ связи</label>
+          <div class="modal__select-wrap">
+            <select name="method" id="serviceMethod" class="input modal__select" required>
+              <option value="telegram" selected>Телеграм</option>
+              <option value="max">Мессенджер Max</option>
+              <option value="call">Звонок</option>
+              <option value="email">Почта</option>
+            </select>
+            <svg class="modal__select-caret" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="modal__field">
+          <label class="modal__label" for="serviceContact">Контакт</label>
+          <input type="text" name="contact" id="serviceContact" class="input" placeholder="Телефон или email" required>
+        </div>
+      </div>
+      <textarea name="message" class="input input--area" rows="3" placeholder="Коротко о вашем проекте / потребности"></textarea>
+
+      <div class="modal__checkboxes">
+        <div class="modal__checkbox-item">
+          <input type="checkbox" name="terms_agree" id="serviceTermsAgree" class="modal__checkbox" required>
+          <label for="serviceTermsAgree" class="modal__checkbox-label">
+            Я согласен с <a href="{{ base_url }}/terms" target="_blank">Пользовательским соглашением</a>
+          </label>
+        </div>
+        <div class="modal__checkbox-item">
+          <input type="checkbox" name="privacy_agree" id="servicePrivacyAgree" class="modal__checkbox" required>
+          <label for="servicePrivacyAgree" class="modal__checkbox-label">
+            Я согласен с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--lg modal__submit">Отправить заявку</button>
+      <p class="modal__success" id="serviceFormSuccess" hidden>✓ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
+    </form>
+  </div>
+</div>
+{% endblock %}

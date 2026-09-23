@@ -1,0 +1,17 @@
+title: Ecom-Studio Theme
+'@extends':
+  type: theme
+  context: blueprints://
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      fields:
+        options:
+          fields:
+            prodname:
+              type: text
+              label: Название студии
+              help: Отображается в шапке
+              default: Ecom-Studio

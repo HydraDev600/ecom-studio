@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true">
+    <div class="page-hero__glow page-hero__glow--blue"></div>
+  </div>
+  <div class="container page-hero__inner">
+    <span class="hero__badge">Услуга</span>
+    <h1 class="page-hero__title">{{ page.title }}</h1>
+    <p class="page-hero__sub">{{ page.header.subtitle|default('Комплексное сопровождение интернет-магазинов и обеспечение их стабильной работы под высокими нагрузками.') }}</p>
+    <div class="hero__actions">
+      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Обсудить проект</a>
+      <a href="{{ base_url }}/services" class="btn btn--ghost btn--lg">Все услуги</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTENT ==================== -->
+<section class="content-section">
+  <div class="container">
+    <div class="content-block">
+      {{ page.content|markdown|raw }}
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FINAL CTA ==================== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta__card">
+      <h2 class="final-cta__title">Хотите обсудить вашу задачу?</h2>
+      <p class="final-cta__text">Оставьте заявку — мы быстро оценим объём работ и предложим понятный план.</p>
+      <form class="final-cta__form" action="{{ base_url }}/contact" method="get">
+        <div class="final-cta__row">
+          <div class="final-cta__field">
+            <label class="final-cta__label" for="ctaName">Ваше имя</label>
+            <input type="text" id="ctaName" name="name" class="input" placeholder="Иван" required>
+          </div>
+          <div class="final-cta__field">
+            <label class="final-cta__label" for="ctaContact">Телефон или Telegram</label>
+            <input type="text" id="ctaContact" name="contact" class="input" placeholder="+7 (999) 000-00-00" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg final-cta__submit">Обсудить проект</button>
+        <p class="final-cta__privacy">
+          Нажимая кнопку, вы соглашаетесь с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

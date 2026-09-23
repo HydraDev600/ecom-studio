@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true">
+    <div class="page-hero__glow page-hero__glow--green"></div>
+  </div>
+  <div class="container page-hero__inner">
+    <span class="hero__badge">Бизнес-подход</span>
+    <h1 class="page-hero__title">Почему мы / <span class="accent">Преимущества</span></h1>
+    <p class="page-hero__sub">{{ page.header.subtitle }}</p>
+  </div>
+</section>
+
+<!-- ==================== ПРЕИМУЩЕСТВА ==================== -->
+<section class="why">
+  <div class="container">
+    <div class="why__grid">
+      {% for reason in page.header.reasons %}
+      <article class="why-card">
+        <div class="why-card__num">{{ '%02d'|format(loop.index) }}</div>
+        <div class="why-card__icon">
+          {% include 'partials/icon.html.twig' with { name: reason.icon } %}
+        </div>
+        <h2 class="why-card__title">{{ reason.title }}</h2>
+        <p class="why-card__text">{{ reason.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="why-strip">
+  <div class="container">
+    <div class="why-strip__inner">
+      <div class="why-strip__icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="why-strip__text">
+        <h3 class="why-strip__title">Мы отвечаем за результат, а не за «часы»</h3>
+        <p class="why-strip__sub">Каждое техническое решение подкреплено измеримым влиянием на бизнес: стабильность, скорость и безопасность = рост продаж.</p>
+      </div>
+      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Начать сотрудничество</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

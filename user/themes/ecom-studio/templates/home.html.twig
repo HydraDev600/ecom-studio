@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+{% set services_page = pages.find('/services') %}
+
+<!-- ==================== HERO / ПОЗИЦИОНИРОВАНИЕ ==================== -->
+<section class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__terminal" aria-hidden="true">
+      <div class="hero__terminal-head">
+        <span class="hero__dot hero__dot--r"></span>
+        <span class="hero__dot hero__dot--y"></span>
+        <span class="hero__dot hero__dot--g"></span>
+        <span class="hero__terminal-title">ssh ecom-studio@server</span>
+      </div>
+      <div class="hero__terminal-body">
+        <p><span class="c-green">$</span> <span class="c-blue">docker-compose</span> up -d --scale web=4</p>
+        <p><span class="c-green">✓</span> Redis cache warm <span class="c-dim">· 12ms</span></p>
+        <p><span class="c-green">✓</span> Nginx config applied <span class="c-dim">· reload ok</span></p>
+        <p><span class="c-green">✓</span> SSL renewed <span class="c-dim">· 30 days left</span></p>
+        <p><span class="c-green">✓</span> Backups validated <span class="c-dim">· 3 sites</span></p>
+        <p class="hero__terminal-cursor"><span class="c-green">$</span> <span class="caret"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hero__inner">
+    <span class="hero__badge">{{ page.header.hero_badge }}</span>
+    <h1 class="hero__title">{{ page.header.hero_title|raw }}</h1>
+    <p class="hero__lead">{{ page.header.hero_lead }}</p>
+    <div class="hero__actions">
+      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Бесплатный аудит</a>
+      <a href="{{ base_url }}/services" class="btn btn--ghost btn--lg">Наши компетенции</a>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-num" data-count="99.9">0</span><span class="hero__stat-suffix">%</span>
+        <span class="hero__stat-label">Uptime / отказоустойчивость</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-num" data-count="40">0</span><span class="hero__stat-suffix">+</span>
+        <span class="hero__stat-label">Проектов под нагрузкой</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-num" data-count="5">0</span><span class="hero__stat-suffix">×</span>
+        <span class="hero__stat-label">Ускорение страниц после оптимизации</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== КОМПЕТЕНЦИИ ==================== -->
+<section class="services">
+  <div class="container">
+    <header class="section-head section-head--center">
+      <span class="section-head__tag">Компетенции</span>
+      <h2 class="section-head__title">Что мы <span class="accent">делаем</span></h2>
+      <p class="section-head__sub">Пять направлений, закрывающих всю техническую карту вашего интернет-магазина — от кода и серверов до поисковой выдачи и автоматизации.</p>
+    </header>
+
+    {% if services_page and services_page.header.services %}
+    <div class="services__grid">
+      {% for service in services_page.header.services %}
+      <article class="service-card">
+        <div class="service-card__icon">
+          {% include 'partials/icon.html.twig' with { name: service.icon } %}
+        </div>
+        <h2 class="service-card__title">{{ service.title }}</h2>
+        <p class="service-card__desc">{{ service.desc }}</p>
+        <ul class="service-card__list">
+          {% for item in service.items %}
+          <li><strong>{{ item.title }}:</strong> {{ item.text }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ base_url }}{{ service.link }}" class="btn btn--ghost service-card__btn">Подробнее</a>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ==================== ПОЧЕМУ МЫ ==================== -->
+{% set why_page = pages.find('/why') %}
+<section class="why">
+  <div class="container">
+    <header class="section-head section-head--center">
+      <span class="section-head__tag">Бизнес-подход</span>
+      <h2 class="section-head__title">Почему <span class="accent">мы</span></h2>
+      <p class="section-head__sub">Мы строим отношения и решения на языке бизнеса и измеримых метрик.</p>
+    </header>
+
+    {% if why_page and why_page.header.reasons %}
+    <div class="why__grid">
+      {% for reason in why_page.header.reasons %}
+      <article class="why-card">
+        <div class="why-card__num">{{ '%02d'|format(loop.index) }}</div>
+        <div class="why-card__icon">
+          {% include 'partials/icon.html.twig' with { name: reason.icon } %}
+        </div>
+        <h2 class="why-card__title">{{ reason.title }}</h2>
+        <p class="why-card__text">{{ reason.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta__card">
+      <h2 class="final-cta__title">Готовы обсудить проект?</h2>
+      <p class="final-cta__text">Оставьте заявку на бесплатный технический аудит — предложим план с понятными бизнес-метриками.</p>
+      <div class="cta-short__actions">
+        <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Обсудить проект</a>
+        <a href="{{ base_url }}/services" class="btn btn--ghost btn--lg">Смотреть услуги</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

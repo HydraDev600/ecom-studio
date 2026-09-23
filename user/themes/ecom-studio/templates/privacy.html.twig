@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true">
+    <div class="page-hero__glow page-hero__glow--blue"></div>
+  </div>
+  <div class="container page-hero__inner">
+    <span class="hero__badge">🔒 Документ</span>
+    <h1 class="page-hero__title">Политика <span class="accent">конфиденциальности</span></h1>
+    <p class="page-hero__sub">Обработка и защита персональных данных пользователей</p>
+  </div>
+</section>
+
+<!-- ==================== PRIVACY CONTENT ==================== -->
+<section class="terms-section">
+  <div class="container">
+    <div class="terms__content">
+      <div class="terms__header">
+        <h2 class="terms__title">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h2>
+        <p class="terms__intro">
+          Настоящая Политика конфиденциальности (далее — Политика) определяет порядок обработки и защиты персональных данных пользователей сайта https://ecom-studio.ru (далее — Сайт).
+        </p>
+      </div>
+
+      <div class="terms__section">
+        <h3 class="terms__section-title">1. Общие положения</h3>
+        <div class="terms__section-content">
+          <p><strong>1.1.</strong> Оператор персональных данных — Индивидуальный предприниматель Васильева Светлана Сергеевна, ИНН 501402430200, ОГРНИП 318505300109750.</p>
+          <p><strong>1.2.</strong> Настоящая Политика разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+          <p><strong>1.3.</strong> Использование Сайта означает согласие пользователя с настоящей Политикой.</p>
+        </div>
+      </div>
+
+      <div class="terms__section">
+        <h3 class="terms__section-title">2. Персональные данные</h3>
+        <div class="terms__section-content">
+          <p><strong>2.1.</strong> Оператор может обрабатывать следующие персональные данные:</p>
+          <ul>
+            <li>Фамилия, имя, отчество</li>
+            <li>Контактный телефон</li>
+            <li>Адрес электронной почты</li>
+            <li>Иные данные, предоставленные пользователем</li>
+          </ul>
+          <p><strong>2.2.</strong> Обработка персональных данных осуществляется на законной и справедливой основе.</p>
+        </div>
+      </div>
+
+      <div class="terms__section">
+        <h3 class="terms__section-title">3. Цели обработки</h3>
+        <div class="terms__section-content">
+          <p><strong>3.1.</strong> Персональные данные обрабатываются в следующих целях:</p>
+          <ul>
+            <li>Связь с пользователем по вопросам оказания услуг</li>
+            <li>Отправка информационных материалов</li>
+            <li>Улучшение качества обслуживания</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="terms__section">
+        <h3 class="terms__section-title">4. Права пользователя</h3>
+        <div class="terms__section-content">
+          <p><strong>4.1.</strong> Пользователь имеет право:</p>
+          <ul>
+            <li>Получать информацию об обработке своих персональных данных</li>
+            <li>Требовать уточнения, блокирования или уничтожения данных</li>
+            <li>Отозвать согласие на обработку данных</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="terms__section">
+        <h3 class="terms__section-title">5. Контакты</h3>
+        <div class="terms__section-content">
+          <p>По вопросам обработки персональных данных обращайтесь по адресу электронной почты: <a href="mailto:tuning-park@yandex.ru" class="terms__link">tuning-park@yandex.ru</a></p>
+        </div>
+      </div>
+
+      <div class="terms__footer">
+        <p>Дата последнего обновления: {{ "now"|date("d.m.Y") }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

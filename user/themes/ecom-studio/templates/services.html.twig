@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true">
+    <div class="page-hero__glow"></div>
+  </div>
+  <div class="container page-hero__inner">
+    <span class="hero__badge">Компетенции</span>
+    <h1 class="page-hero__title">Услуги / <span class="accent">Компетенции</span></h1>
+    <p class="page-hero__sub">{{ page.header.subtitle }}</p>
+  </div>
+</section>
+
+<!-- ==================== УСЛУГИ / КОМПЕТЕНЦИИ ==================== -->
+<section class="services">
+  <div class="container">
+    <div class="services__grid">
+      {% for service in page.header.services %}
+      <article class="service-card">
+        <div class="service-card__icon">
+          {% include 'partials/icon.html.twig' with { name: service.icon } %}
+        </div>
+        <h2 class="service-card__title">{{ service.title }}</h2>
+        <p class="service-card__desc">{{ service.desc }}</p>
+        <ul class="service-card__list">
+          {% for item in service.items %}
+          <li><strong>{{ item.title }}:</strong> {{ item.text }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ base_url }}{{ service.link }}" class="btn btn--ghost service-card__btn">Подробнее</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta__card">
+      <h2 class="final-cta__title">Не нашли нужную услугу?</h2>
+      <p class="final-cta__text">Уточним под вашу задачу. Оставьте заявку на бесплатный технический аудит — обсудим варианты.</p>
+      <div class="cta-short__actions">
+        <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Обсудить проект</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

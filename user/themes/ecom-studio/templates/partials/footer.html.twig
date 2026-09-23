@@ -1,0 +1,38 @@
+{% set base = (base_url == '') ? '' : base_url %}
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="{{ base ~ '/' }}" class="header__logo">
+        <span class="header__logo-icon">ES</span>
+        <span class="header__logo-text">{{ config.theme.prodname|default('Ecom-Studio') }}</span>
+      </a>
+      <p class="footer__tag">Студия полного цикла технической поддержки e-commerce</p>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__title">Услуги</h4>
+      <a href="{{ base }}/services/bitrix">1С-Битрикс</a>
+      <a href="{{ base }}/services/devops">DevOps &amp; SysOps</a>
+      <a href="{{ base }}/services/security">Информационная безопасность</a>
+      <a href="{{ base }}/services/seo">Техническое SEO</a>
+      <a href="{{ base }}/services/automate">Автоматизация</a>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__title">Компания</h4>
+      <a href="{{ base }}/why">Почему мы</a>
+      <a href="{{ base }}/contact">Обсудить проект</a>
+    </div>
+    <div class="footer__col footer__col--contact">
+      <h4 class="footer__title">Связаться</h4>
+      <a href="mailto:hello@ecom-studio.ru">hello@ecom-studio.ru</a>
+      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© 2026 Ecom-Studio. Все права защищены.</span>
+    <div class="footer__legal">
+      <a href="{{ base }}/terms">Пользовательское соглашение</a>
+      <span class="footer__separator">|</span>
+      <a href="{{ base }}/privacy">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>

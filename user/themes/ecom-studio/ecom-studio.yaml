@@ -1,0 +1,14 @@
+enabled: true
+prodname: 'Ecom-Studio'
+
+# --- Метаданные темы ---
+name: Ecom-Studio
+version: 1.0.0
+description: "Кастомная тема для сайта Ecom-Studio: студия полного цикла технической поддержки e-commerce"
+icon: rocket
+author:
+  name: Ecom-Studio
+  email: hello@ecom-studio.ru
+homepage: https://ecom-studio.ru
+keywords: ecommerce, bitrix, devops, seo, theme
+license: MIT

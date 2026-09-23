@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: 'ru' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if header.title %}{{ header.title|e('html') }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ header.description|default(site.metadata.description)|e('html') }}">
+
+  {% block stylesheets %}
+    {% do assets.addCss('theme://css/fonts.css', {priority: -30}) %}
+    {% do assets.addCss('theme://css/style.css', {priority: -20}) %}
+  {% endblock %}
+  {{ assets.css()|raw }}
+
+</head>
+<body id="top">
+
+  {% include 'partials/header.html.twig' %}
+
+  {% block content %}{% endblock %}
+
+  {% include 'partials/footer.html.twig' %}
+
+  {% block javascripts %}
+    {% do assets.addJs('theme://js/main.js', {priority: -5}) %}
+  {% endblock %}
+  {{ assets.js()|raw }}
+
+</body>
+</html>
