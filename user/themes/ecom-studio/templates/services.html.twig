@@ -24,11 +24,6 @@
         </div>
         <h2 class="service-card__title">{{ service.title }}</h2>
         <p class="service-card__desc">{{ service.desc }}</p>
-        <ul class="service-card__list">
-          {% for item in service.items %}
-          <li><strong>{{ item.title }}:</strong> {{ item.text }}</li>
-          {% endfor %}
-        </ul>
         <a href="{{ base_url }}{{ service.link }}" class="btn btn--ghost service-card__btn">Подробнее</a>
       </article>
       {% endfor %}
