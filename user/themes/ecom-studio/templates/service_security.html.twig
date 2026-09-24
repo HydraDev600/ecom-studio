@@ -1,37 +1,399 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<!-- ==================== PAGE HERO ==================== -->
-<section class="page-hero">
+<!-- ==================== БЛОК 1: HERO ==================== -->
+<section class="page-hero automate-hero">
   <div class="page-hero__bg" aria-hidden="true">
     <div class="page-hero__glow page-hero__glow--red"></div>
   </div>
   <div class="container page-hero__inner">
-    <span class="hero__badge">Услуга</span>
-    <h1 class="page-hero__title">{{ page.title }}</h1>
-    <p class="page-hero__sub">{{ page.header.subtitle|default('Оперативно найдем вредоносный код, удалим скрытые бэкдоры и шеллы. Настроим проактивную защиту на уровне сервера.') }}</p>
+    <span class="hero__badge">Информационная безопасность</span>
+    <h1 class="page-hero__title">Лечение сайтов от вирусов и комплексная защита 1С-Битрикс</h1>
+    <p class="page-hero__sub">Оперативно найдём вредоносный код, удалим скрытые бэкдоры и шеллы. Выявим точку взлома через логи сервера. Настроим проактивную защиту на уровне Nginx, выведем из-под санкций поисковиков и снимем блокировку хостинга.</p>
+
     <div class="hero__actions">
-      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Экстренная помощь</a>
-      <a href="{{ base_url }}/services" class="btn btn--ghost btn--lg">Все услуги</a>
+      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Экстренная помощь (ответим за 15 минут)</a>
+      <a href="#pricing" class="btn btn--ghost btn--lg">Заказать аудит безопасности</a>
+    </div>
+
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>SLA и гарантия 30 дней<br><small>фиксируем в договоре</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Работаем по договору<br><small>официально и прозрачно</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Опыт DevOps-инженерии<br><small>защита на уровне сервера</small></span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== CONTENT ==================== -->
-<section class="content-section">
+<!-- ==================== БЛОК 2: КВАЛИФИКАЦИЯ ПРОБЛЕМЫ ==================== -->
+<section class="problems-section">
   <div class="container">
-    <div class="content-block">
-      {{ page.content|markdown|raw }}
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Узнай свою боль</span>
+      <h2 class="section-head__title">С какими симптомами взлома <span class="accent">мы работаем</span>?</h2>
+    </div>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Блокировка хостингом</h3>
+        <p class="problem-card__desc">Провайдер прислал уведомление о DDoS-атаке, спам-рассылке или превышении нагрузки, и отключил аккаунт.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 11h6M11 8v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Санкции ПС (Яндекс/Google)</h3>
+        <p class="problem-card__desc">В выдаче или браузере появилась красная плашка «Сайт может угрожать безопасности вашего компьютера». Резкое падение SEO-трафика.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Скрытые редиректы</h3>
+        <p class="problem-card__desc">Мобильные пользователи непроизвольно перенаправляются на сторонние сайты, казино или подписки.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Модификация ядра</h3>
+        <p class="problem-card__desc">Изменены системные файлы 1С-Битрикс, появились подозрительные файлы .php в папках для загрузки картинок (upload).</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== FINAL CTA ==================== -->
+<!-- ==================== БЛОК 3: РАСКРЫТИЕ УСЛУГИ ==================== -->
+<section class="services-detail">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Наши компетенции</span>
+      <h2 class="section-head__title">Что входит в лечение <span class="accent">и защиту проекта</span></h2>
+    </div>
+
+    <div class="services-detail__grid">
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">01</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Глубокое сканирование и ручная очистка</h3>
+        <p class="service-detail-card__desc">Ищем обфусцированный (зашифрованный) PHP/JS код, трояны и спам-ссылки. Работаем на уровне консоли сервера (grep, find), вычищаем базу данных от вредоносных инъекций без потери контента.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">grep / find</span>
+          <span class="tag">PHP / JS</span>
+          <span class="tag">Очистка БД</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">02</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Поиск и устранение вектора атаки</h3>
+        <p class="service-detail-card__desc">Вирус — это следствие. Мы анализируем access.log и error.log, находим 0-day уязвимость, дыру в стороннем модуле или скомпрометированный пароль, через которые произошёл взлом.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">access.log</span>
+          <span class="tag">0-day</span>
+          <span class="tag">Анализ логов</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">03</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Проактивная защита сервера (Hardening)</h3>
+        <p class="service-detail-card__desc">Настраиваем конфигурацию веб-сервера (Nginx/Apache). Блокируем прямой доступ к системным файлам и директориям загрузок. Внедряем Rate Limiting для защиты админ-панели от брутфорса и парсинга.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">Nginx</span>
+          <span class="tag">Rate Limiting</span>
+          <span class="tag">Hardening</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">04</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Восстановление репутации</h3>
+        <p class="service-detail-card__desc">Отправляем запросы в Яндекс.Вебмастер и Google Search Console на перепроверку ресурса. Помогаем вывести IP-адрес сервера из глобальных блэклистов (Spamhaus, RBL).</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">Вебмастер</span>
+          <span class="tag">Search Console</span>
+          <span class="tag">RBL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 4: ПРОЦЕСС РАБОТЫ ==================== -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Таймлайн</span>
+      <h2 class="section-head__title">Как происходит <span class="accent">лечение сайта</span></h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step__num">1</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Изоляция и Бэкап (1 час)</h3>
+          <p class="process-step__desc">Делаем полный слепок системы и БД. Изолируем проект, чтобы остановить заражение соседних сайтов на сервере.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">2</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Детоксикация (3–8 часов)</h3>
+          <p class="process-step__desc">Удаление всех выявленных угроз, восстановление заражённых файлов ядра из оригинальных репозиториев Битрикс.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">3</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Настройка безопасности (2 часа)</h3>
+          <p class="process-step__desc">Исправление прав доступа (chmod/chown), закрытие уязвимостей, настройка WAF и серверных фильтров.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">4</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Мониторинг (30 дней)</h3>
+          <p class="process-step__desc">Контроль за состоянием сайта. Гарантируем, что рецидива не произойдёт.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 5: КЕЙС ==================== -->
+<section class="cases-section" id="cases">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Результаты</span>
+      <h2 class="section-head__title">Результаты <span class="accent">нашей работы</span></h2>
+    </div>
+
+    <div class="cases-grid cases-grid--single">
+      <div class="case-card">
+        <div class="case-card__header">
+          <span class="case-card__badge">Интернет-магазин</span>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__task"><strong>Проблема:</strong> Крупный интернет-магазин был заблокирован хостингом из-за исходящего DDoS-трафика. Нагрузка на CPU — 100%.</div>
+          <div class="case-card__solution"><strong>Решение:</strong> Найден и изолирован скрытый PHP-майнер в забытом плагине. Проведена чистка, ядро обновлено, настроены строгие правила Nginx для папки upload.</div>
+          <div class="case-card__result">
+            <div class="result-metric">
+              <span class="result-metric__value">6 часов</span>
+              <span class="result-metric__label">сайт возвращён в строй</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric__value">15%</span>
+              <span class="result-metric__label">штатная нагрузка (было 100%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 6: СТОИМОСТЬ ==================== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Цены</span>
+      <h2 class="section-head__title">Стоимость лечения сайтов <span class="accent">от вирусов</span></h2>
+    </div>
+
+    <div class="pricing-grid pricing-grid--two">
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Базовая очистка и снятие блокировок</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 15 000</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="pricing-card__desc">Удаление шеллов, редиректов, вывод из-под фильтров. Подходит для небольших визиток и лендингов.</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Удаление шеллов и редиректов</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Вывод из-под фильтров</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--ghost pricing-card__btn">Заказать</a>
+      </div>
+
+      <div class="pricing-card pricing-card--popular">
+        <div class="pricing-card__badge">Популярное</div>
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Комплексная безопасность e-commerce</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 35 000</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="pricing-card__desc">Лечение + полный аудит архитектуры, настройка серверной защиты Nginx, строгие политики прав, тюнинг сервера. Идеально для тяжёлого 1С-Битрикс.</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Полный аудит архитектуры</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Защита Nginx</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Тюнинг сервера</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--primary pricing-card__btn">Заказать</a>
+      </div>
+    </div>
+
+    <p class="pricing-note">Окончательная смета формируется после бесплатного экспресс-аудита и оценки масштаба заражения.</p>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 7: ЭКСПЕРТ ==================== -->
+<section class="why-n8n-section">
+  <div class="container">
+    <div class="why-n8n__inner">
+      <div class="why-n8n__content">
+        <span class="section-head__tag">Почему мы</span>
+        <h2 class="why-n8n__title">Инженерный подход к <span class="accent">информационной безопасности</span></h2>
+        <div class="why-n8n__text">
+          <p>Большинство фрилансеров просто прогоняют сайт через автоматический антивирус (например, AI-Bolit), который удаляет следствия, но оставляет открытой дверь для новых атак.</p>
+          <p>Наш подход — это <strong>полноценный SysOps</strong>. Мы смотрим на безопасность через архитектуру сервера, работу Docker-контейнеров, права операционной системы и логику работы самого Битрикс. Мы не просто лечим, мы цементируем фундамент.</p>
+        </div>
+      </div>
+      <div class="why-n8n__visual">
+        <div class="n8n-mockup">
+          <div class="n8n-mockup__header">
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__title">root@server:~# scan</span>
+          </div>
+          <div class="n8n-mockup__body">
+            <div class="n8n-node n8n-node--trigger">$ grep -rl "eval(base64" .</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node n8n-node--active">✓ 3 вредоносных файла найдено</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node">$ rm -f shell.php backdoor.php</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node">✓ Система очищена · WAF включён</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 8: FAQ ==================== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">FAQ</span>
+      <h2 class="section-head__title">Ответы на частые <span class="accent">вопросы</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Сайт лежит прямо сейчас, как быстро вы начнёте работу?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Берём в работу срочные инциденты в течение часа после обращения.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Даёте ли вы гарантию от повторного заражения?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Да, мы предоставляем гарантию 30 дней при условии, что вы следуете нашим рекомендациям по настройке хостинга и защите сервера.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Нужно ли будет менять хостинг?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Не обязательно, но если текущий провайдер не позволяет настроить нужный уровень изоляции, мы организуем бесшовный переезд на надёжный Dedicated сервер.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Вы лечите только 1С-Битрикс?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Мы специализируемся на высоконагруженных проектах на Битрикс, но наш опыт администрирования Linux-серверов позволяет успешно очищать и защищать любые PHP-фреймворки и CMS, включая Grav CMS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 9: ПЕРЕЛИНКОВКА ==================== -->
+<section class="related-services">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Смежные услуги</span>
+      <h2 class="section-head__title">Смежные услуги для вашего <span class="accent">проекта</span></h2>
+    </div>
+
+    <div class="related-grid">
+      <a href="{{ base_url }}/services/devops" class="related-card">
+        <div class="related-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 6v.01M12 6v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="related-card__title">Администрирование серверов</h3>
+        <p class="related-card__desc">Перенос на безопасный хостинг.</p>
+        <span class="related-card__link">Подробнее →</span>
+      </a>
+
+      <a href="{{ base_url }}/services/bitrix-speed" class="related-card">
+        <div class="related-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="related-card__title">Оптимизация и ускорение 1С-Битрикс</h3>
+        <p class="related-card__desc">Ускорение на уровне кода и кэширования.</p>
+        <span class="related-card__link">Подробнее →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 10: ФИНАЛЬНЫЙ CTA ==================== -->
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__card">
       <h2 class="final-cta__title">Сайт взломан или работает с перебоями?</h2>
-      <p class="final-cta__text">Не ждите, пока поисковые системы обнулят ваш SEO-трафик. Оставьте заявку прямо сейчас.</p>
+      <p class="final-cta__text">Не ждите, пока поисковые системы обнулят ваш SEO-трафик. Оставьте заявку прямо сейчас, и мы проведём экспресс-анализ логов и файлов бесплатно.</p>
+
       <form class="final-cta__form" action="{{ base_url }}/contact" method="get">
         <div class="final-cta__row">
           <div class="final-cta__field">
@@ -39,13 +401,17 @@
             <input type="text" id="ctaName" name="name" class="input" placeholder="Иван" required>
           </div>
           <div class="final-cta__field">
-            <label class="final-cta__label" for="ctaContact">Телефон или Telegram</label>
+            <label class="final-cta__label" for="ctaContact">Телефон / Telegram</label>
             <input type="text" id="ctaContact" name="contact" class="input" placeholder="+7 (999) 000-00-00" required>
           </div>
         </div>
+        <div class="final-cta__field">
+          <label class="final-cta__label" for="ctaMessage">Ссылка на сайт</label>
+          <input type="text" id="ctaMessage" name="message" class="input" placeholder="https://ваш-сайт.ru">
+        </div>
         <button type="submit" class="btn btn--primary btn--lg final-cta__submit">Получить оценку безопасности</button>
         <p class="final-cta__privacy">
-          Нажимая кнопку, вы соглашаетесь с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
+          Отправляя данные, вы соглашаетесь с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
         </p>
       </form>
     </div>

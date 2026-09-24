@@ -1971,6 +1971,11 @@ section {
   gap: 24px;
 }
 
+.cases-grid--single {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
 .case-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -2095,6 +2100,12 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+.pricing-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 880px;
+  margin: 0 auto;
 }
 
 .pricing-card {
