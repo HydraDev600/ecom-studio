@@ -150,3 +150,13 @@ if (modal) {
 // ==================== ACTIVE NAV LINK ====================
 // Активная страница в меню помечается классом header__link--active в HTML,
 // поэтому пересечение секций для якорей больше не требуется.
+
+// ==================== FAQ ACCORDION ====================
+const faqQuestions = document.querySelectorAll('.faq-item__question');
+
+faqQuestions.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+  });
+});

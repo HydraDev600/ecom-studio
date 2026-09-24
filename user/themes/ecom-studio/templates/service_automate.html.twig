@@ -1,37 +1,425 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<!-- ==================== PAGE HERO ==================== -->
+<!-- ==================== БЛОК 1: HERO ==================== -->
 <section class="page-hero automate-hero">
   <div class="page-hero__bg" aria-hidden="true">
     <div class="page-hero__glow page-hero__glow--purple"></div>
   </div>
   <div class="container page-hero__inner">
-    <span class="hero__badge">Услуга</span>
-    <h1 class="page-hero__title">{{ page.title }}</h1>
-    <p class="page-hero__sub">{{ page.header.subtitle|default('Автоматизируем рутинные задачи и интегрируем сервисы для повышения эффективности вашего бизнеса.') }}</p>
+    <span class="hero__badge">Автоматизация · n8n</span>
+    <h1 class="page-hero__title">Автоматизация бизнес-процессов и интеграция систем по API (n8n)</h1>
+    <p class="page-hero__sub">Избавим вашу команду от ручной работы. Свяжем сайт на Битрикс, CRM, мессенджеры и сторонние сервисы в единую экосистему с помощью n8n и REST API. Настроим умных чат-ботов с ИИ, автоматизируем обработку заказов и рассылку уведомлений без абонентской платы за каждый клик.</p>
+
     <div class="hero__actions">
-      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Обсудить проект</a>
-      <a href="{{ base_url }}/services" class="btn btn--ghost btn--lg">Все услуги</a>
+      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Обсудить задачу</a>
+      <a href="#cases" class="btn btn--ghost btn--lg">Смотреть примеры workflows</a>
+    </div>
+
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Self-hosted решения<br><small>данные не уходят сторонним сервисам</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 4a1.5 1.5 0 11-1.5 1.5A1.5 1.5 0 0112 6zm-2 10v-4h2v4h1v2H9v-2z" fill="currentColor"/></svg>
+        <span>Интеграция с нейросетями<br><small>OpenRouter, OpenAI</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Нестандартные API<br><small>опыт работы с редкими системами</small></span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== CONTENT ==================== -->
-<section class="content-section">
+<!-- ==================== БЛОК 2: КВАЛИФИКАЦИЯ ПРОБЛЕМЫ ==================== -->
+<section class="problems-section">
   <div class="container">
-    <div class="content-block">
-      {{ page.content|markdown|raw }}
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Узнай свою боль</span>
+      <h2 class="section-head__title">Какие проблемы решает <span class="accent">автоматизация</span>?</h2>
+    </div>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Человеческий фактор и потеря лидов</h3>
+        <p class="problem-card__desc">Менеджеры забывают вовремя отправить клиенту письмо, выставить счёт или перенести заявку из формы на сайте в CRM.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Дорогая разработка модулей</h3>
+        <p class="problem-card__desc">Для связи вашего сайта с новым сервисом доставки или эквайрингом нет готового модуля, а программисты просят сотни тысяч за его написание.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M8 8h8M8 12h8M8 16h5M4 4h16v16H4z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Ручной перенос данных (копипаст)</h3>
+        <p class="problem-card__desc">Сотрудники тратят часы на то, чтобы выгрузить данные из одной программы (например, парсера) и загрузить их в другую.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Отсутствие связи с мессенджерами</h3>
+        <p class="problem-card__desc">Клиенты хотят получать статусы заказов в Telegram или WhatsApp, но ваш текущий движок этого не умеет.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== FINAL CTA ==================== -->
+<!-- ==================== БЛОК 3: РАСКРЫТИЕ УСЛУГИ ==================== -->
+<section class="services-detail">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Наши компетенции</span>
+      <h2 class="section-head__title">Что мы <span class="accent">автоматизируем</span> и интегрируем</h2>
+    </div>
+
+    <div class="services-detail__grid">
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">01</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M18 7h2M4 12h6M13 12h7M4 17h3M10 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="7" r="1.6" fill="currentColor"/><circle cx="11" cy="12" r="1.6" fill="currentColor"/><circle cx="8" cy="17" r="1.6" fill="currentColor"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Разработка сценариев (Workflows) в n8n</h3>
+        <p class="service-detail-card__desc">Проектирование сложной логики (с условиями, циклами и ветвлениями) с помощью low-code платформы n8n. Это быстрее и дешевле классического программирования.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">n8n</span>
+          <span class="tag">Workflows</span>
+          <span class="tag">Low-code</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">02</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Связка систем по REST API и Webhooks</h3>
+        <p class="service-detail-card__desc">Интеграция любых сервисов, у которых есть API (amoCRM, Битрикс24, МойСклад, платёжные шлюзы, маркетплейсы). Настройка мгновенного приёма вебхуков от сторонних систем.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">REST API</span>
+          <span class="tag">Webhooks</span>
+          <span class="tag">amoCRM</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">03</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 4a1.5 1.5 0 11-1.5 1.5A1.5 1.5 0 0112 6zm-2 10v-4h2v4h1v2H9v-2z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Внедрение ИИ и чат-ботов</h3>
+        <p class="service-detail-card__desc">Разработка Telegram-ботов и интеграция с нейросетями (через OpenRouter, OpenAI) для умной автогенерации ответов клиентам на платформах вроде Avito или умной фильтрации заявок.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">ИИ</span>
+          <span class="tag">Чат-боты</span>
+          <span class="tag">OpenRouter</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">04</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 6v.01M12 6v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Развертывание Self-hosted инфраструктуры</h3>
+        <p class="service-detail-card__desc">Установка движка n8n и баз данных (например, Supabase) на ваших собственных серверах с помощью Docker. Полный контроль над данными.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">Self-hosted</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Supabase</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 4: ПРОЦЕСС РАБОТЫ ==================== -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Как мы работаем</span>
+      <h2 class="section-head__title">Как мы внедряем <span class="accent">автоматизацию</span></h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step__num">1</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Аудит бизнес-процесса</h3>
+          <p class="process-step__desc">Вы описываете, как процесс работает сейчас (например: «Клиент пишет на Авито → Менеджер отвечает → Заносит в Excel»). Мы находим точки автоматизации.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">2</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Проектирование схемы</h3>
+          <p class="process-step__desc">Создаём визуальную блок-схему будущего workflow, определяем необходимые API и доступы.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">3</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Настройка и тестирование</h3>
+          <p class="process-step__desc">Собираем сценарий в изолированной среде, тестируем граничные случаи (что будет, если сторонний сервер не ответит).</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">4</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Релиз и мониторинг</h3>
+          <p class="process-step__desc">Запускаем автоматизацию в работу и настраиваем алерты, чтобы при сбоях в API мы узнали об этом первыми.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 5: КЕЙСЫ ==================== -->
+<section class="cases-section" id="cases">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Результаты</span>
+      <h2 class="section-head__title">Примеры реализованных <span class="accent">связок</span></h2>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-card__header">
+          <span class="case-card__badge">ИИ-ассистент</span>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 4a1.5 1.5 0 11-1.5 1.5A1.5 1.5 0 0112 6zm-2 10v-4h2v4h1v2H9v-2z" fill="currentColor"/></svg>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__task"><strong>Задача:</strong> Разгрузить менеджеров от однотипных вопросов на Avito.</div>
+          <div class="case-card__solution"><strong>Сделано:</strong> Связка «Avito API → n8n → OpenRouter (ИИ) → Telegram (для контроля)». Бот сам отвечает на вопросы по наличию и собирает контакты, передавая тёплый лид в мессенджер менеджеру.</div>
+        </div>
+        <div class="case-card__flow">
+          <span class="flow-item">Avito API</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-item highlight">n8n</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-item">OpenRouter (ИИ)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-item">Telegram</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-card__header">
+          <span class="case-card__badge">Сложный заказ</span>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M9 15l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__task"><strong>Задача:</strong> Автоматизировать генерацию документов для оптовиков.</div>
+          <div class="case-card__solution"><strong>Сделано:</strong> При смене статуса заказа в 1С-Битрикс n8n перехватывает Webhook, генерирует PDF-договор, отправляет его клиенту на почту и ставит задачу бухгалтеру в CRM.</div>
+        </div>
+        <div class="case-card__flow">
+          <span class="flow-item">1С-Битрикс</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-item highlight">n8n (Webhook)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-item">PDF + Почта</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-item">CRM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 6: ТАРИФЫ ==================== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Тарифы</span>
+      <h2 class="section-head__title">Стоимость настройки <span class="accent">автоматизации</span></h2>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Простые связки (Webhooks & API)</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 10 000</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="pricing-card__desc">Настройка передачи данных между 2–3 сервисами (например, Сайт → Telegram → CRM).</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Передача данных между сервисами</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Настройка Webhooks</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--ghost pricing-card__btn">Заказать</a>
+      </div>
+
+      <div class="pricing-card pricing-card--popular">
+        <div class="pricing-card__badge">Популярное</div>
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Сложные Workflows (n8n)</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 30 000</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="pricing-card__desc">Проектирование многошаговых процессов с ветвлениями, обработкой массивов данных (JSON) и подключением нейросетей.</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Многошаговые процессы</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ветвления и JSON</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Подключение нейросетей</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--primary pricing-card__btn">Заказать</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Развертывание n8n на вашем сервере</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 15 000</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="pricing-card__desc">Установка n8n через Docker, настройка SSL, бэкапов и базовой безопасности.</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Установка через Docker</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Настройка SSL и бэкапов</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--ghost pricing-card__btn">Заказать</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 7: ЭКСПЕРТ ==================== -->
+<section class="why-n8n-section">
+  <div class="container">
+    <div class="why-n8n__inner">
+      <div class="why-n8n__content">
+        <span class="section-head__tag">Почему мы</span>
+        <h2 class="why-n8n__title">Почему мы используем n8n, а не <span class="accent">Zapier или Make</span>?</h2>
+        <div class="why-n8n__text">
+          <p>Популярные облачные сервисы (Zapier, Make/Integromat) требуют ежемесячной подписки, которая растёт пропорционально количеству ваших операций. Кроме того, ваши конфиденциальные данные о заказах и клиентах проходят через чужие сервера за рубежом.</p>
+          <p>Наш подход — <strong>Self-hosted n8n</strong>. Мы разворачиваем платформу автоматизации на вашем личном сервере (интегрируя наши навыки SysOps). Вы платите за разработку сценария один раз, данные не покидают ваш контур безопасности, а количество выполняемых операций не ограничено тарифами платформы.</p>
+        </div>
+      </div>
+      <div class="why-n8n__visual">
+        <div class="n8n-mockup">
+          <div class="n8n-mockup__header">
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__title">n8n · self-hosted</span>
+          </div>
+          <div class="n8n-mockup__body">
+            <div class="n8n-node n8n-node--trigger">Trigger</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node n8n-node--active">Битрикс Webhook</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-nodes-row">
+              <div class="n8n-node">ИИ-обработка</div>
+              <div class="n8n-node">Telegram</div>
+            </div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node">CRM / Email</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 8: FAQ ==================== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">FAQ</span>
+      <h2 class="section-head__title">Ответы на вопросы <span class="accent">по интеграциям</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Можно ли интегрировать самописную систему или старую CRM?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Да. Если у вашей системы есть хотя бы базовый REST API или возможность отправлять/принимать Webhooks, мы сможем связать её с любым другим сервисом.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Что если сторонний сервис изменит своё API?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Мы можем взять ваши интеграции на поддержку. При изменении API мы оперативно скорректируем узлы в n8n, чтобы восстановить работу сценария.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Насколько безопасна передача данных через n8n?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Система разворачивается на вашем сервере. Мы используем защищённые HTTPS-соединения, шифруем ключи доступа и настраиваем строгие права на уровне сервера.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 9: ПЕРЕЛИНКОВКА ==================== -->
+<section class="related-services">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Смежные услуги</span>
+      <h2 class="section-head__title">Услуги для вашего <span class="accent">проекта</span></h2>
+    </div>
+
+    <div class="related-grid">
+      <a href="{{ base_url }}/services/devops" class="related-card">
+        <div class="related-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 6v.01M12 6v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="related-card__title">Администрирование серверов</h3>
+        <p class="related-card__desc">Где будет работать ваша автоматизация.</p>
+        <span class="related-card__link">Подробнее →</span>
+      </a>
+
+      <a href="{{ base_url }}/services/bitrix" class="related-card">
+        <div class="related-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 7l2-2h14l2 2v12H3V7z" stroke="currentColor" stroke-width="2"/><path d="M7 12h10M9 9h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="related-card__title">Поддержка и развитие 1С-Битрикс</h3>
+        <p class="related-card__desc">Надёжная работа магазина под нагрузкой.</p>
+        <span class="related-card__link">Подробнее →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 10: ФИНАЛЬНЫЙ CTA ==================== -->
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__card">
-      <h2 class="final-cta__title">Хотите обсудить вашу задачу?</h2>
-      <p class="final-cta__text">Оставьте заявку — мы быстро оценим объём работ и предложим понятный план.</p>
+      <h2 class="final-cta__title">Расскажите о процессе, который отнимает у вас время</h2>
+      <p class="final-cta__text">Оставьте заявку, опишите вашу рутину, и мы бесплатно спроектируем базовую схему автоматизации и рассчитаем стоимость её внедрения.</p>
+
       <form class="final-cta__form" action="{{ base_url }}/contact" method="get">
         <div class="final-cta__row">
           <div class="final-cta__field">
@@ -39,11 +427,15 @@
             <input type="text" id="ctaName" name="name" class="input" placeholder="Иван" required>
           </div>
           <div class="final-cta__field">
-            <label class="final-cta__label" for="ctaContact">Телефон или Telegram</label>
+            <label class="final-cta__label" for="ctaContact">Telegram / Телефон</label>
             <input type="text" id="ctaContact" name="contact" class="input" placeholder="+7 (999) 000-00-00" required>
           </div>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg final-cta__submit">Обсудить проект</button>
+        <div class="final-cta__field">
+          <label class="final-cta__label" for="ctaMessage">Какие сервисы нужно связать</label>
+          <textarea id="ctaMessage" name="message" class="input input--area" rows="3" placeholder="Например: сайт на Битрикс → Telegram → amoCRM"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg final-cta__submit">Получить схему автоматизации</button>
         <p class="final-cta__privacy">
           Нажимая кнопку, вы соглашаетесь с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
         </p>
