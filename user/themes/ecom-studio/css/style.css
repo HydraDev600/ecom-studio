@@ -2027,6 +2027,34 @@ section {
   font-weight: 600;
 }
 
+.case-card__result {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.result-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-metric__value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent-2);
+  letter-spacing: -0.5px;
+}
+
+.result-metric__label {
+  font-size: 13px;
+  color: var(--text-faint);
+  max-width: 200px;
+}
+
 .case-card__flow {
   display: flex;
   align-items: center;
@@ -2161,6 +2189,13 @@ section {
 
 .pricing-card__btn {
   margin-top: auto;
+}
+
+.pricing-note {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--text-faint);
 }
 
 /* ==================== WHY N8N SECTION ==================== */

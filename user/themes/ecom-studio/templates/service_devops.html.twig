@@ -1,37 +1,446 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<!-- ==================== PAGE HERO ==================== -->
-<section class="page-hero">
+<!-- ==================== БЛОК 1: HERO ==================== -->
+<section class="page-hero automate-hero">
   <div class="page-hero__bg" aria-hidden="true">
     <div class="page-hero__glow page-hero__glow--green"></div>
   </div>
   <div class="container page-hero__inner">
-    <span class="hero__badge">Услуга</span>
-    <h1 class="page-hero__title">{{ page.title }}</h1>
-    <p class="page-hero__sub">{{ page.header.subtitle|default('Профессиональная настройка и поддержка серверной инфраструктуры для вашего бизнеса.') }}</p>
+    <span class="hero__badge">DevOps & SysOps</span>
+    <h1 class="page-hero__title">Администрирование серверов и DevOps: Надёжная инфраструктура для вашего бизнеса</h1>
+    <p class="page-hero__sub">Настройка, оптимизация и круглосуточный мониторинг Linux-серверов. Разворачиваем отказоустойчивые архитектуры для высоконагруженных проектов на 1С-Битрикс и других CMS. Обеспечиваем аптайм 99.9%, бесшовные миграции и безопасность данных корпоративного уровня.</p>
+
     <div class="hero__actions">
-      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Обсудить проект</a>
-      <a href="{{ base_url }}/services" class="btn btn--ghost btn--lg">Все услуги</a>
+      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Получить консультацию DevOps-инженера</a>
+      <a href="#pricing" class="btn btn--ghost btn--lg">Рассчитать стоимость переезда</a>
+    </div>
+
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Экспертиза в BitrixVM<br><small>настройка под 1С-Битрикс</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Dedicated & VPS<br><small>опыт с физическими серверами</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Автоматизация CI/CD<br><small>деплой без простоя</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Мониторинг 24/7<br><small>алерты о сбоях</small></span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== CONTENT ==================== -->
-<section class="content-section">
+<!-- ==================== БЛОК 2: КВАЛИФИКАЦИЯ ПРОБЛЕМЫ ==================== -->
+<section class="problems-section">
   <div class="container">
-    <div class="content-block">
-      {{ page.content|markdown|raw }}
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Узнай свою боль</span>
+      <h2 class="section-head__title">Когда проекту требуется <span class="accent">профессиональное администрирование</span>?</h2>
+    </div>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Сайт падает при наплыве трафика</h3>
+        <p class="problem-card__desc">Рекламная кампания запущена, клиенты идут, а сервер не выдерживает нагрузку, выдавая ошибку 502 Bad Gateway или 504 Gateway Timeout.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Медленная работа Битрикс на обычном хостинге</h3>
+        <p class="problem-card__desc">Проекту тесно в рамках стандартного shared-хостинга, нужна тонкая настройка кэширования (Redis, Memcached) на выделенном сервере.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Страх потери данных (нет бэкапов)</h3>
+        <p class="problem-card__desc">У вас нет уверенности, что резервные копии создаются регулярно, корректно и что из них можно быстро восстановить проект в случае сбоя или взлома.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Сложности с развертыванием обновлений</h3>
+        <p class="problem-card__desc">Разработчикам нужно современное окружение с контейнеризацией (Docker) и автоматическим деплоем, а текущий сервер настроен криво или устарел.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== FINAL CTA ==================== -->
+<!-- ==================== БЛОК 3: РАСКРЫТИЕ УСЛУГИ ==================== -->
+<section class="services-detail">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Наши компетенции</span>
+      <h2 class="section-head__title">Компетенции и <span class="accent">инфраструктурные решения</span></h2>
+    </div>
+
+    <div class="services-detail__grid">
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">01</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 6v.01M12 6v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Настройка веб-окружения и BitrixVM</h3>
+        <p class="service-detail-card__desc">Профессиональная установка и тюнинг связки Nginx + Apache (или чистый Nginx + PHP-FPM). Оптимизация параметров ядра Linux, MySQL/MariaDB и PHP для достижения максимальной производительности тяжёлых CMS.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">BitrixVM</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">PHP-FPM</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">02</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Миграция и переезд без даунтайма</h3>
+        <p class="service-detail-card__desc">Бесшовный перенос ваших проектов со старого хостинга на современные облачные VPS (Timeweb, Selectel, Яндекс.Облако) или физические серверы (Dedicated) без потери заказов и SEO-трафика.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">VPS</span>
+          <span class="tag">Dedicated</span>
+          <span class="tag">Миграция</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">03</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Контейнеризация и оркестрация</h3>
+        <p class="service-detail-card__desc">Внедрение Docker для изоляции сервисов, быстрого масштабирования и создания идентичных сред для разработки (staging) и продакшена.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Staging</span>
+          <span class="tag">Изоляция</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">04</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 3a9 9 0 11-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Резервное копирование и мониторинг</h3>
+        <p class="service-detail-card__desc">Настройка надёжной системы инкрементальных бэкапов с выгрузкой в независимое облако (S3). Внедрение систем мониторинга (Zabbix, Prometheus/Grafana) для отслеживания загрузки CPU, RAM, диска и оперативного реагирования на инциденты.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">S3</span>
+          <span class="tag">Zabbix</span>
+          <span class="tag">Grafana</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 4: ПРОЦЕСС РАБОТЫ ==================== -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Инженерный подход</span>
+      <h2 class="section-head__title">Как мы строим <span class="accent">надёжную инфраструктуру</span></h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step__num">1</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Аудит текущей архитектуры</h3>
+          <p class="process-step__desc">Анализируем узкие места в работе сервера, профилируем нагрузку, проверяем настройки безопасности и логи (error/access.log).</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">2</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Проектирование решения</h3>
+          <p class="process-step__desc">Подбираем оптимальную конфигурацию железа и софта под ваш бюджет и планируемую посещаемость.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">3</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Развертывание и настройка (Provisioning)</h3>
+          <p class="process-step__desc">Настраиваем ОС, веб-сервер, СУБД, кэш и системы защиты. Пишем необходимые bash-скрипты и systemd-сервисы.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">4</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Перенос и тестирование</h3>
+          <p class="process-step__desc">Аккуратно мигрируем данные, проводим нагрузочное тестирование и переключаем DNS-записи.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">5</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Передача на саппорт</h3>
+          <p class="process-step__desc">Подключаем сервер к нашей системе мониторинга для круглосуточного контроля.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 5: КЕЙСЫ ==================== -->
+<section class="cases-section" id="cases">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Результаты</span>
+      <h2 class="section-head__title">Наши результаты <span class="accent">в цифрах</span></h2>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-card__header">
+          <span class="case-card__badge">Миграция</span>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__task"><strong>Задача:</strong> Перенос крупного B2B-портала с устаревшего VDS на кластер из двух серверов.</div>
+          <div class="case-card__result">
+            <div class="result-metric">
+              <span class="result-metric__value">0.3 с</span>
+              <span class="result-metric__label">TTFB (было 1.8 с)</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric__value">0 мин</span>
+              <span class="result-metric__label">даунтайм при переключении</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-card__header">
+          <span class="case-card__badge">Оптимизация MySQL</span>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M3 17l4-4 3 3 7-8M17 8h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__task"><strong>Задача:</strong> Настройка конфигурации базы данных интернет-магазина (более 300 000 товаров).</div>
+          <div class="case-card__result">
+            <div class="result-metric">
+              <span class="result-metric__value">0 падений</span>
+              <span class="result-metric__label">при массовой выгрузке каталога из 1С</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric__value">-40%</span>
+              <span class="result-metric__label">потребление RAM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 6: ТАРИФЫ ==================== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Тарифы</span>
+      <h2 class="section-head__title">Стоимость <span class="accent">администрирования серверов</span></h2>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Разовые работы (Setup & Перенос)</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 10 000</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="pricing-card__desc">Установка BitrixVM, перенос сайта «под ключ», базовая настройка Nginx и MySQL.</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Установка BitrixVM</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Перенос под ключ</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--ghost pricing-card__btn">Заказать</a>
+      </div>
+
+      <div class="pricing-card pricing-card--popular">
+        <div class="pricing-card__badge">Популярное</div>
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Абонентское обслуживание (VPS/VDS)</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 15 000</span>
+          <span class="currency">руб. / мес.</span>
+        </div>
+        <div class="pricing-card__desc">Мониторинг, еженедельное обновление ПО, контроль создания бэкапов, решение инцидентов (включает X часов работ инженера).</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Мониторинг 24/7</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Контроль бэкапов</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Решение инцидентов</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--primary pricing-card__btn">Заказать</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">DevOps & Сложная инфраструктура</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 35 000</span>
+          <span class="currency">руб. / мес.</span>
+        </div>
+        <div class="pricing-card__desc">Обслуживание кластеров, работа с Docker, автоматизация CI/CD, профилирование высоких нагрузок.</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Обслуживание кластеров</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Docker + CI/CD</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--ghost pricing-card__btn">Заказать</a>
+      </div>
+    </div>
+
+    <p class="pricing-note">Окончательная смета зависит от количества серверов, архитектуры и требований к SLA.</p>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 7: ЭКСПЕРТ ==================== -->
+<section class="why-n8n-section">
+  <div class="container">
+    <div class="why-n8n__inner">
+      <div class="why-n8n__content">
+        <span class="section-head__tag">Почему мы</span>
+        <h2 class="why-n8n__title">SysOps с пониманием <span class="accent">вашего бизнеса</span></h2>
+        <div class="why-n8n__text">
+          <p>Системный администратор не должен быть «чёрным ящиком» для бизнеса. Мы не просто пишем непонятные команды в консоли Linux. Мы понимаем, что упавший сервер в период распродажи — это миллионные убытки.</p>
+          <p>Наша цель — <strong>выстроить такую архитектуру, при которой инфраструктура становится незаметным, но абсолютно надёжным фундаментом для роста ваших продаж</strong>. От настройки VPN для безопасного доступа разработчиков до проектирования отказоустойчивых кластеров.</p>
+        </div>
+      </div>
+      <div class="why-n8n__visual">
+        <div class="n8n-mockup">
+          <div class="n8n-mockup__header">
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__title">ssh root@server:~#</span>
+          </div>
+          <div class="n8n-mockup__body">
+            <div class="n8n-node n8n-node--trigger">$ systemctl status nginx</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node n8n-node--active">● nginx — active (running)</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node">$ docker ps --format ".Names"</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node">bitrix · redis · mariadb</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 8: FAQ ==================== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">FAQ</span>
+      <h2 class="section-head__title">Частые вопросы по <span class="accent">настройке серверов</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Помогаете ли вы с выбором хостинг-провайдера?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Да, мы проанализируем ваши потребности и порекомендуем оптимальный дата-центр с лучшим соотношением цена/производительность/надёжность.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Работаете ли вы с облачными сервисами (Яндекс.Облако, AWS)?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Да, мы разворачиваем и администрируем инфраструктуру как на выделенных серверах (Bare-Metal), так и в облачных средах.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Что будет, если сервер упадёт ночью?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>В рамках тарифов с мониторингом наши инженеры получают уведомления о сбоях критических сервисов круглосуточно и приступают к восстановлению согласно SLA.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Настраиваете ли вы почтовые серверы?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Да, мы можем развернуть корпоративный почтовый сервер на базе вашего домена с настройкой DKIM, SPF, DMARC для защиты от попадания в спам.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 9: ПЕРЕЛИНКОВКА ==================== -->
+<section class="related-services">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Смежные услуги</span>
+      <h2 class="section-head__title">Услуги, которые часто заказывают <span class="accent">вместе с настройкой серверов</span></h2>
+    </div>
+
+    <div class="related-grid">
+      <a href="{{ base_url }}/services/security" class="related-card">
+        <div class="related-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="related-card__title">Информационная безопасность и защита от DDoS</h3>
+        <p class="related-card__desc">Защита репутации и данных пользователей.</p>
+        <span class="related-card__link">Подробнее →</span>
+      </a>
+
+      <a href="{{ base_url }}/services/bitrix-speed" class="related-card">
+        <div class="related-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="related-card__title">Оптимизация и ускорение 1С-Битрикс</h3>
+        <p class="related-card__desc">Ускорение на уровне кода и кэширования.</p>
+        <span class="related-card__link">Подробнее →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 10: ФИНАЛЬНЫЙ CTA ==================== -->
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__card">
-      <h2 class="final-cta__title">Хотите обсудить вашу задачу?</h2>
-      <p class="final-cta__text">Оставьте заявку — мы быстро оценим объём работ и предложим понятный план.</p>
+      <h2 class="final-cta__title">Вашему серверу нужна профессиональная настройка?</h2>
+      <p class="final-cta__text">Оставьте заявку, и мы бесплатно проведём базовый аудит конфигурации вашего сервера, выявим узкие места и предложим план оптимизации инфраструктуры.</p>
+
       <form class="final-cta__form" action="{{ base_url }}/contact" method="get">
         <div class="final-cta__row">
           <div class="final-cta__field">
@@ -39,11 +448,15 @@
             <input type="text" id="ctaName" name="name" class="input" placeholder="Иван" required>
           </div>
           <div class="final-cta__field">
-            <label class="final-cta__label" for="ctaContact">Телефон или Telegram</label>
+            <label class="final-cta__label" for="ctaContact">Email / Телефон</label>
             <input type="text" id="ctaContact" name="contact" class="input" placeholder="+7 (999) 000-00-00" required>
           </div>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg final-cta__submit">Обсудить проект</button>
+        <div class="final-cta__field">
+          <label class="final-cta__label" for="ctaMessage">Описание проблемы или задачи</label>
+          <textarea id="ctaMessage" name="message" class="input input--area" rows="3" placeholder="Например: сайт падает при наплыве трафика"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg final-cta__submit">Запросить аудит сервера</button>
         <p class="final-cta__privacy">
           Нажимая кнопку, вы соглашаетесь с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
         </p>
