@@ -1,37 +1,424 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<!-- ==================== PAGE HERO ==================== -->
-<section class="page-hero">
+<!-- ==================== БЛОК 1: HERO ==================== -->
+<section class="page-hero automate-hero">
   <div class="page-hero__bg" aria-hidden="true">
     <div class="page-hero__glow page-hero__glow--green"></div>
   </div>
   <div class="container page-hero__inner">
-    <span class="hero__badge">Услуга</span>
-    <h1 class="page-hero__title">{{ page.title }}</h1>
-    <p class="page-hero__sub">{{ page.header.subtitle|default('Исправляем технические ошибки, которые мешают ранжированию в Яндексе и Google.') }}</p>
+    <span class="hero__badge">Техническое SEO</span>
+    <h1 class="page-hero__title">Техническое SEO и аудит сайта: Фундамент для роста позиций</h1>
+    <p class="page-hero__sub">Поисковики не видят ваш сайт? Исправляем технические ошибки, которые мешают ранжированию в Яндексе и Google. Устраняем дубли страниц, настраиваем редиректы, оптимизируем скорость загрузки (Core Web Vitals) и автоматизируем создание SEO-контента. Откроем ваш сайт для поисковых ботов.</p>
+
     <div class="hero__actions">
-      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Обсудить проект</a>
-      <a href="{{ base_url }}/services" class="btn btn--ghost btn--lg">Все услуги</a>
+      <a href="{{ base_url }}/contact" class="btn btn--primary btn--lg">Заказать технический аудит</a>
+      <a href="#pricing" class="btn btn--ghost btn--lg">Узнать цены на SEO-сопровождение</a>
+    </div>
+
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4M8 11h6M11 8v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Yandex.Webmaster<br><small>и Google Search Console</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M18 7h2M4 12h6M13 12h7M4 17h3M10 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="7" r="1.6" fill="currentColor"/><circle cx="11" cy="12" r="1.6" fill="currentColor"/><circle cx="8" cy="17" r="1.6" fill="currentColor"/></svg>
+        <span>Автоматизация парсинга<br><small>сбор данных из выдачи</small></span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 7l2-2h14l2 2v12H3V7z" stroke="currentColor" stroke-width="2"/><path d="M7 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Архитектура 1С-Битрикс<br><small>понимание изнутри</small></span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== CONTENT ==================== -->
-<section class="content-section">
+<!-- ==================== БЛОК 2: КВАЛИФИКАЦИЯ ПРОБЛЕМЫ ==================== -->
+<section class="problems-section">
   <div class="container">
-    <div class="content-block">
-      {{ page.content|markdown|raw }}
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Узнай свою боль</span>
+      <h2 class="section-head__title">Почему вашему сайту нужен <span class="accent">технический SEO-аудит</span>?</h2>
+    </div>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4M8 11h6M11 8v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Страницы выпадают из индекса</h3>
+        <p class="problem-card__desc">В панелях Яндекс.Вебмастер и Google Search Console постоянно появляются ошибки «Страница не найдена (404)», «Дубль» или «Малополезный контент».</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Низкая скорость загрузки</h3>
+        <p class="problem-card__desc">Гугл пессимизирует ваш сайт из-за красной зоны в отчёте Core Web Vitals (долгий ответ сервера, смещение макета).</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="problem-card__title">Проблема с «мусорными» страницами</h3>
+        <p class="problem-card__desc">Фильтры каталога, страницы пагинации и сортировки плодят тысячи дублей, съедая краулинговый бюджет поисковых ботов.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M18 7h2M4 12h6M13 12h7M4 17h3M10 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="7" r="1.6" fill="currentColor"/><circle cx="11" cy="12" r="1.6" fill="currentColor"/><circle cx="8" cy="17" r="1.6" fill="currentColor"/></svg>
+        </div>
+        <h3 class="problem-card__title">Сложности с массовым контентом</h3>
+        <p class="problem-card__desc">Нужны тысячи описаний товаров, но ручной труд копирайтеров слишком дорог, а парсеры (например, XMLRiver) и генераторы настроены некорректно.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== FINAL CTA ==================== -->
+<!-- ==================== БЛОК 3: РАСКРЫТИЕ УСЛУГИ ==================== -->
+<section class="services-detail">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Наши компетенции</span>
+      <h2 class="section-head__title">Что включает в себя <span class="accent">техническая SEO-оптимизация</span></h2>
+    </div>
+
+    <div class="services-detail__grid">
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">01</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M18 7h2M4 12h6M13 12h7M4 17h3M10 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="7" r="1.6" fill="currentColor"/><circle cx="11" cy="12" r="1.6" fill="currentColor"/><circle cx="8" cy="17" r="1.6" fill="currentColor"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Исправление индексации и структуры URL</h3>
+        <p class="service-detail-card__desc">Настраиваем правильную генерацию robots.txt и sitemap.xml. Внедряем теги rel="canonical" для борьбы с дублями. Настраиваем логику 301 редиректов при изменении структуры или переезде сайта.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">robots.txt</span>
+          <span class="tag">sitemap.xml</span>
+          <span class="tag">canonical</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">02</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Ускорение загрузки (Performance SEO)</h3>
+        <p class="service-detail-card__desc">Тюнинг скорости отдачи контента. Оптимизация серверного ответа (TTFB), настройка gzip/Brotli сжатия, внедрение современных форматов изображений (WebP) и асинхронной загрузки скриптов.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">TTFB</span>
+          <span class="tag">Brotli</span>
+          <span class="tag">WebP</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">03</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M8 9l-3 3 3 3m8 0l3-3-3-3m-3 8l4-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">Внедрение микроразметки</h3>
+        <p class="service-detail-card__desc">Размечаем контент по стандарту Schema.org (Товары, Статьи, FAQ, Хлебные крошки, Организация). Это делает сниппет в поисковой выдаче привлекательным и повышает CTR (кликабельность).</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">Schema.org</span>
+          <span class="tag">FAQ</span>
+          <span class="tag">CTR</span>
+        </div>
+      </div>
+
+      <div class="service-detail-card">
+        <div class="service-detail-card__num">04</div>
+        <div class="service-detail-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 4a1.5 1.5 0 11-1.5 1.5A1.5 1.5 0 0112 6zm-2 10v-4h2v4h1v2H9v-2z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="service-detail-card__title">SEO-автоматизация и парсинг</h3>
+        <p class="service-detail-card__desc">Настройка инструментов автоматического сбора данных из выдачи, интеграция с AI (OpenRouter, GPT) для массовой генерации уникальных SEO-описаний товаров на основе заданных параметров.</p>
+        <div class="service-detail-card__tags">
+          <span class="tag">Парсинг</span>
+          <span class="tag">AI</span>
+          <span class="tag">Генерация</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 4: ПРОЦЕСС РАБОТЫ ==================== -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Прозрачный процесс</span>
+      <h2 class="section-head__title">Этапы <span class="accent">SEO-оптимизации</span> вашего сайта</h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step__num">1</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Глубокий парсинг и аудит</h3>
+          <p class="process-step__desc">Сканируем весь сайт специализированными краулерами (аналогами Screaming Frog), собираем все технические ошибки, битые ссылки и проблемы с мета-тегами.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">2</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Анализ панелей вебмастеров</h3>
+          <p class="process-step__desc">Изучаем данные из Яндекс.Вебмастера и Google Search Console, находим причины выпадения страниц из индекса.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">3</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Формирование ТЗ и исправление</h3>
+          <p class="process-step__desc">Если сайт на нашей поддержке, мы сами вносим правки в код. Если у вас есть свои разработчики — составляем подробное техническое задание для внедрения.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">4</div>
+        <div class="process-step__content">
+          <h3 class="process-step__title">Мониторинг результатов</h3>
+          <p class="process-step__desc">Отслеживаем динамику индексации и позиций после внесения правок.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 5: КЕЙСЫ ==================== -->
+<section class="cases-section" id="cases">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Результаты</span>
+      <h2 class="section-head__title">Примеры решения <span class="accent">SEO-задач</span></h2>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-card__header">
+          <span class="case-card__badge">Индексация</span>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4M8 11h6M11 8v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__task"><strong>Задача:</strong> Интернет-магазин на Битрикс (50 000+ товаров) не мог попасть в индекс Google из-за проблем с краулинговым бюджетом и бесконечной генерацией URL фильтров.</div>
+          <div class="case-card__solution"><strong>Сделано:</strong> Закрыли мусорные параметры в robots.txt, настроили ЧПУ и canonical.</div>
+          <div class="case-card__result">
+            <div class="result-metric">
+              <span class="result-metric__value">×4</span>
+              <span class="result-metric__label">рост страниц в индексе Google</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric__value">2 мес</span>
+              <span class="result-metric__label">срок до результата</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-card__header">
+          <span class="case-card__badge">Автоматизация контента</span>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 4a1.5 1.5 0 11-1.5 1.5A1.5 1.5 0 0112 6zm-2 10v-4h2v4h1v2H9v-2z" fill="currentColor"/></svg>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__task"><strong>Задача:</strong> Требовалось создать уникальные SEO-тексты для 5 000 карточек товаров.</div>
+          <div class="case-card__solution"><strong>Сделано:</strong> Настроена связка парсера характеристик и генерации осмысленных текстов через API нейросетей.</div>
+          <div class="case-card__result">
+            <div class="result-metric">
+              <span class="result-metric__value">×10</span>
+              <span class="result-metric__label">экономия бюджета на контент</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric__value">+35%</span>
+              <span class="result-metric__label">рост низкочастотного трафика</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 6: ТАРИФЫ ==================== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Тарифы</span>
+      <h2 class="section-head__title">Стоимость <span class="accent">технического SEO</span></h2>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Базовый SEO-аудит</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 25 000</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="pricing-card__desc">Полное сканирование сайта, анализ логов сервера, выявление всех технических ошибок. Предоставляется подробный отчёт и список рекомендаций (ТЗ для программистов).</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Полное сканирование сайта</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Анализ логов сервера</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--ghost pricing-card__btn">Заказать</a>
+      </div>
+
+      <div class="pricing-card pricing-card--popular">
+        <div class="pricing-card__badge">Популярное</div>
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Техническое SEO «Под ключ»</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">от 50 000</span>
+          <span class="currency">руб.</span>
+        </div>
+        <div class="pricing-card__desc">Мы не только находим ошибки, но и сами исправляем их в коде вашего сайта (настройка редиректов, внедрение микроразметки, оптимизация скорости загрузки).</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Исправление ошибок в коде</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Микроразметка Schema.org</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Оптимизация скорости</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--primary pricing-card__btn">Заказать</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__title">Внедрение автоматизации контента</h3>
+        </div>
+        <div class="pricing-card__price">
+          <span class="price">индивидуально</span>
+          <span class="currency"></span>
+        </div>
+        <div class="pricing-card__desc">Настройка парсеров и AI-генерации под специфику вашего каталога.</div>
+        <ul class="pricing-card__features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Настройка парсеров</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI-генерация контента</li>
+        </ul>
+        <a href="{{ base_url }}/contact" class="btn btn--ghost pricing-card__btn">Заказать</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 7: ЭКСПЕРТ ==================== -->
+<section class="why-n8n-section">
+  <div class="container">
+    <div class="why-n8n__inner">
+      <div class="why-n8n__content">
+        <span class="section-head__tag">Почему мы</span>
+        <h2 class="why-n8n__title">Почему SEO-аудит должен делать <span class="accent">инженер</span></h2>
+        <div class="why-n8n__text">
+          <p>Часто SEO-специалисты формируют ТЗ, которое программисты отказываются выполнять, потому что оно ломает архитектуру сайта. Мы — инженеры. Мы не просто знаем, как должен выглядеть идеальный код для Яндекса и Google, мы умеем его писать.</p>
+          <p>Понимание того, как работают серверные логи, как настраивается кэширование и как база данных отдаёт контент, позволяет нам <strong>внедрять техническое SEO без ущерба для стабильности проекта</strong>.</p>
+        </div>
+      </div>
+      <div class="why-n8n__visual">
+        <div class="n8n-mockup">
+          <div class="n8n-mockup__header">
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__dot"></span>
+            <span class="n8n-mockup__title">seo-audit · crawl</span>
+          </div>
+          <div class="n8n-mockup__body">
+            <div class="n8n-node n8n-node--trigger">$ crawler scan site.ru</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node n8n-node--active">✓ 1 240 страниц просканировано</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node">⚠ 48 дублей · 12 битых ссылок</div>
+            <div class="n8n-connection"></div>
+            <div class="n8n-node">✓ canonical + 301 настроены</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 8: FAQ ==================== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">FAQ</span>
+      <h2 class="section-head__title">Ответы на частые вопросы по <span class="accent">техническому SEO</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Вы занимаетесь закупкой ссылок и написанием текстов?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Наша специализация — это технический фундамент, внутренняя оптимизация и автоматизация контента. Мы готовим сайт так, чтобы контентный маркетинг и линкбилдинг приносили максимальный эффект.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Через какое время после технического аудита вырастет трафик?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Техническое SEO — это фундамент. Исправление критических ошибок часто даёт рост в течение 1–2 месяцев по мере переиндексации сайта поисковиками.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question" aria-expanded="false">
+          <span>Поможет ли техническое SEO, если сайт попал под фильтр?</span>
+          <svg class="faq-item__icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-item__answer">
+          <p>Если фильтр наложен за технические нарушения (например, клоакинг, дубли, скрытые редиректы), то да, это первый шаг к снятию санкций.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 9: ПЕРЕЛИНКОВКА ==================== -->
+<section class="related-services">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="section-head__tag">Смежные услуги</span>
+      <h2 class="section-head__title">Смежные услуги для вашего <span class="accent">проекта</span></h2>
+    </div>
+
+    <div class="related-grid">
+      <a href="{{ base_url }}/services/bitrix" class="related-card">
+        <div class="related-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="related-card__title">Оптимизация производительности Битрикс (Ускорение)</h3>
+        <p class="related-card__desc">Ускорение на уровне кода и кэширования.</p>
+        <span class="related-card__link">Подробнее →</span>
+      </a>
+
+      <a href="{{ base_url }}/services/automate" class="related-card">
+        <div class="related-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M18 7h2M4 12h6M13 12h7M4 17h3M10 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="7" r="1.6" fill="currentColor"/><circle cx="11" cy="12" r="1.6" fill="currentColor"/><circle cx="8" cy="17" r="1.6" fill="currentColor"/></svg>
+        </div>
+        <h3 class="related-card__title">Автоматизация процессов и интеграция API</h3>
+        <p class="related-card__desc">Связка систем и нейросетей.</p>
+        <span class="related-card__link">Подробнее →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== БЛОК 10: ФИНАЛЬНЫЙ CTA ==================== -->
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__card">
-      <h2 class="final-cta__title">Хотите обсудить вашу задачу?</h2>
-      <p class="final-cta__text">Оставьте заявку — мы быстро оценим объём работ и предложим понятный план.</p>
+      <h2 class="final-cta__title">Хотите узнать, что мешает вашему сайту в поиске?</h2>
+      <p class="final-cta__text">Оставьте заявку, и мы бесплатно проведём экспресс-анализ главной страницы вашего ресурса, проверим наличие критических ошибок индексации и Core Web Vitals.</p>
+
       <form class="final-cta__form" action="{{ base_url }}/contact" method="get">
         <div class="final-cta__row">
           <div class="final-cta__field">
@@ -39,13 +426,17 @@
             <input type="text" id="ctaName" name="name" class="input" placeholder="Иван" required>
           </div>
           <div class="final-cta__field">
-            <label class="final-cta__label" for="ctaContact">Телефон или Telegram</label>
+            <label class="final-cta__label" for="ctaContact">Телефон / Telegram</label>
             <input type="text" id="ctaContact" name="contact" class="input" placeholder="+7 (999) 000-00-00" required>
           </div>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg final-cta__submit">Обсудить проект</button>
+        <div class="final-cta__field">
+          <label class="final-cta__label" for="ctaMessage">Ссылка на сайт</label>
+          <input type="text" id="ctaMessage" name="message" class="input" placeholder="https://ваш-сайт.ru">
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg final-cta__submit">Заказать бесплатный экспресс-аудит</button>
         <p class="final-cta__privacy">
-          Нажимая кнопку, вы соглашаетесь с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
+          Ваши данные защищены в соответствии с <a href="{{ base_url }}/privacy" target="_blank">Политикой конфиденциальности</a>
         </p>
       </form>
     </div>
